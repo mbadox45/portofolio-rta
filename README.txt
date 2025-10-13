@@ -1,0 +1,1 @@
+NEXT_PUBLIC_URL_HOME="http://localhost:3000/"
