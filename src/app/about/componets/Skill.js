@@ -4,18 +4,16 @@ import FloatingIcons from "@/components/FloatingIcons";
 import Image from "next/image";
 
 export default function Skill() {
-  // Variants untuk parent container
   const containerVariants = {
     hidden: {},
     show: {
       transition: {
-        delayChildren: 1, // delay 1 detik sebelum card pertama muncul
-        staggerChildren: 0.3, // jeda antar card
+        delayChildren: 0.5,
+        staggerChildren: 0.3,
       },
     },
   };
 
-  // Variants untuk card animasi
   const cardVariants = {
     hidden: { opacity: 0, y: 50, scale: 0.9, rotate: -3 },
     show: {
@@ -32,7 +30,6 @@ export default function Skill() {
     },
   };
 
-  // Data Skill Stack
   const skillStack = [
     { name: "HTML 5", icon: "/logo/skill/html.png" },
     { name: "PHP", icon: "/logo/skill/php.png" },
@@ -45,14 +42,12 @@ export default function Skill() {
     { name: "Node.js", icon: "/logo/skill/nodejs.png" },
   ];
 
-  // Data Database (RDBMS)
   const databases = [
     { name: "PostgreSQL", icon: "/logo/skill/postgresql.png" },
     { name: "MySQL", icon: "/logo/skill/mysql.png" },
     { name: "SQLite", icon: "/logo/skill/sqlite.png" },
   ];
 
-  // Data Soft Skill
   const softSkills = [
     { name: "Problem Solving", icon: "/logo/skill/problem.png" },
     { name: "Teamwork", icon: "/logo/skill/teamwork.png" },
@@ -60,12 +55,26 @@ export default function Skill() {
     { name: "Creativity", icon: "/logo/skill/creativity.png" },
   ];
 
-  // Data Tools Used
   const tools = [
     { name: "Git", icon: "/logo/skill/github.png" },
     { name: "Docker", icon: "/logo/skill/docker.png" },
     { name: "Postman", icon: "/logo/skill/postman.png" },
   ];
+
+  // Helper komponen tooltip item
+  const TooltipItem = ({ name, icon, size = 45 }) => (
+    <div className="group relative flex flex-col items-center gap-2 px-3 py-2 bg-white/5 rounded-lg hover:bg-amber-500/20 transition-all cursor-pointer">
+      <Image src={icon} alt={name} width={size} height={size} />
+      {/* Tooltip */}
+      <span
+        className="absolute bottom-[-35px] left-1/2 -translate-x-1/2 z-50 bg-black/80 text-white text-xs 
+        px-3 py-1 rounded opacity-0 translate-y-2 group-hover:opacity-100 
+        group-hover:translate-y-0 transition-all duration-300 ease-out whitespace-nowrap pointer-events-none shadow-md"
+      >
+        {name}
+      </span>
+    </div>
+  );
 
   return (
     <section
@@ -74,9 +83,8 @@ export default function Skill() {
     >
       <FloatingIcons />
 
-      {/* Content */}
-      <div className="absolute top-0 w-full px-40 font-michroma min-h-screen flex flex-col gap-14 justify-center">
-        {/* Title Animation */}
+      <div className="absolute text-white top-0 w-full px-45 font-michroma min-h-screen flex flex-col gap-14 justify-center">
+        {/* Title */}
         <motion.span
           initial={{ x: -300, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
@@ -89,16 +97,16 @@ export default function Skill() {
           className="text-6xl uppercase font-bold font-suse inline-block"
           style={{
             textShadow: `
-              2px 2px 0 #1e3a8a,   
-              4px 4px 0 #1c1917,   
-              6px 6px 0 #0a0a0a    
+              2px 2px 0 #1e3a8a,
+              4px 4px 0 #1c1917,
+              6px 6px 0 #0a0a0a
             `,
           }}
         >
           Skills
         </motion.span>
 
-        {/* Skills Section */}
+        {/* Skills Container */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -114,19 +122,8 @@ export default function Skill() {
               Tech Stack
             </h3>
             <div className="flex flex-wrap justify-between gap-4">
-              {skillStack.map((skill, index) => (
-                <div
-                  key={index}
-                  className="flex flex-col items-center gap-2 px-3 py-2 bg-white/5 rounded-lg hover:bg-amber-500/20 transition-all"
-                >
-                  <Image
-                    src={skill.icon}
-                    alt={skill.name}
-                    width={45}
-                    height={45}
-                  />
-                  {/* <span className="text-xs">{skill.name}</span> */}
-                </div>
+              {skillStack.map((skill, i) => (
+                <TooltipItem key={i} {...skill} />
               ))}
             </div>
           </motion.div>
@@ -140,14 +137,8 @@ export default function Skill() {
               Databases
             </h3>
             <div className="flex justify-between gap-4">
-              {databases.map((db, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-2 px-3 py-2 bg-white/5 rounded-lg hover:bg-amber-500/20 transition-all"
-                >
-                  <Image src={db.icon} alt={db.name} width={45} height={45} />
-                  {/* <span>{db.name}</span> */}
-                </div>
+              {databases.map((db, i) => (
+                <TooltipItem key={i} {...db} />
               ))}
             </div>
           </motion.div>
@@ -161,19 +152,8 @@ export default function Skill() {
               Soft Skills
             </h3>
             <div className="flex justify-between gap-4">
-              {softSkills.map((skill, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-2 px-3 py-2 bg-white/5 rounded-lg hover:bg-amber-500/20 transition-all"
-                >
-                  <Image
-                    src={skill.icon}
-                    alt={skill.name}
-                    width={40}
-                    height={40}
-                  />
-                  {/* <span>{skill.name}</span> */}
-                </div>
+              {softSkills.map((skill, i) => (
+                <TooltipItem key={i} {...skill} size={40} />
               ))}
             </div>
           </motion.div>
@@ -185,19 +165,8 @@ export default function Skill() {
           >
             <h3 className="text-2xl font-bold mb-4 text-amber-400">Tools</h3>
             <div className="flex justify-between gap-4">
-              {tools.map((tool, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-2 px-3 py-2 bg-white/5 rounded-lg hover:bg-amber-500/20 transition-all"
-                >
-                  <Image
-                    src={tool.icon}
-                    alt={tool.name}
-                    width={45}
-                    height={45}
-                  />
-                  {/* <span>{tool.name}</span> */}
-                </div>
+              {tools.map((tool, i) => (
+                <TooltipItem key={i} {...tool} />
               ))}
             </div>
           </motion.div>

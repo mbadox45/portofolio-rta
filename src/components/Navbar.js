@@ -37,7 +37,7 @@ export default function Navbar() {
                 <Navigation />
             </motion.nav> */}
             <div className="absolute w-full px-40 mx-auto py-6 flex justify-between items-center">
-                <a href={process.env.NEXT_PUBLIC_URL_HOME || "/"} >
+                <a className="text-white" href={process.env.NEXT_PUBLIC_URL_HOME || "/"} >
                     <span className="text-xl font-bold font-michroma cursor-pointer transition-all duration-150 hover:text-stone-300">rtardiarta</span>
                 </a>
                 <div className="space-x-12 font-bold text-white flex items-center">
