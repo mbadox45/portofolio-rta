@@ -19,8 +19,54 @@
   }
 }
 
+@keyframes color-slideshow {
+  0%   { background-color: #ec4899; border-color: #ec4899; } /* pink-500 */
+  50%  { background-color: #8b5cf6; border-color: #8b5cf6; } /* purple-500 */
+  100% { background-color: #3b82f6; border-color: #3b82f6; } /* blue-500 */
+}
+
+.animate-color-slideshow:hover {
+  animation: color-slideshow 3s ease-in-out forwards;
+}
+
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+.font-michroma{
+  font-family: var(--font-michroma);
+}
+
+.font-exo-2{
+  font-family: var(--font-exo-2);
+}
+
+.font-suse{
+  font-family: var(--font-suse);
+}
+
+.font-inter{
+  font-family: var(--font-inter);
+}
+
+.font-montserrat{
+  font-family: var(--font-montserrat);
+}
+
+.font-m-plus{
+  font-family: var(--font-m-plus);
+}
+
+.bg-animated-gradient {
+  background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1c1c1c);
+  background-size: 400% 400%;
+  animation: gradientBG 20s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
 }
