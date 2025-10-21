@@ -8,24 +8,26 @@ export default function Skill() {
     hidden: {},
     show: {
       transition: {
-        delayChildren: 0.5,
-        staggerChildren: 0.3,
+        delayChildren: 0.6,
+        staggerChildren: 0.15, // biar muncul satu-satu lembut
       },
     },
   };
 
+  // 💡 Efek spring bounce alami
   const cardVariants = {
-    hidden: { opacity: 0, y: 50, scale: 0.9, rotate: -3 },
+    hidden: { opacity: 0, y: 60, scale: 0.9 },
     show: {
       opacity: 1,
       y: 0,
       scale: 1,
       rotate: 0,
       transition: {
-        duration: 0.6,
         type: "spring",
-        stiffness: 120,
-        damping: 12,
+        stiffness: 160, // makin tinggi makin "mantul"
+        damping: 10,    // makin kecil makin lentur
+        mass: 0.6,      // menambah efek lembut
+        bounce: 0.45,   // tambahan bounce efek
       },
     },
   };
@@ -61,11 +63,9 @@ export default function Skill() {
     { name: "Postman", icon: "/logo/skill/postman.png" },
   ];
 
-  // Helper komponen tooltip item
   const TooltipItem = ({ name, icon, size = 45 }) => (
     <div className="group relative flex flex-col items-center gap-2 px-3 py-2 bg-white/5 rounded-lg hover:bg-amber-500/20 transition-all cursor-pointer">
       <Image src={icon} alt={name} width={size} height={size} />
-      {/* Tooltip */}
       <span
         className="absolute bottom-[-35px] left-1/2 -translate-x-1/2 z-50 bg-black/80 text-white text-xs 
         px-3 py-1 rounded opacity-0 translate-y-2 group-hover:opacity-100 
@@ -92,7 +92,7 @@ export default function Skill() {
             type: "spring",
             stiffness: 120,
             damping: 8,
-            delay: 0.5,
+            delay: 0.4,
           }}
           className="text-6xl uppercase font-bold font-suse inline-block"
           style={{
@@ -116,6 +116,8 @@ export default function Skill() {
           {/* Tech Stack */}
           <motion.div
             variants={cardVariants}
+            whileHover={{ scale: 1.04 }}
+            transition={{ type: "spring", stiffness: 300, damping: 15 }}
             className="bg-white/10 backdrop-blur-lg rounded-2xl col-span-3 p-6 border border-white/20 shadow-lg hover:shadow-amber-500/20 transition-all"
           >
             <h3 className="text-2xl font-bold mb-4 text-amber-400">
@@ -131,6 +133,8 @@ export default function Skill() {
           {/* Databases */}
           <motion.div
             variants={cardVariants}
+            whileHover={{ scale: 1.04 }}
+            transition={{ type: "spring", stiffness: 300, damping: 15 }}
             className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 shadow-lg hover:shadow-amber-500/20 transition-all"
           >
             <h3 className="text-2xl font-bold mb-4 text-amber-400">
@@ -146,6 +150,8 @@ export default function Skill() {
           {/* Soft Skills */}
           <motion.div
             variants={cardVariants}
+            whileHover={{ scale: 1.04 }}
+            transition={{ type: "spring", stiffness: 300, damping: 15 }}
             className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 shadow-lg hover:shadow-amber-500/20 transition-all"
           >
             <h3 className="text-2xl font-bold mb-4 text-amber-400">
@@ -161,6 +167,8 @@ export default function Skill() {
           {/* Tools */}
           <motion.div
             variants={cardVariants}
+            whileHover={{ scale: 1.04 }}
+            transition={{ type: "spring", stiffness: 300, damping: 15 }}
             className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 shadow-lg hover:shadow-amber-500/20 transition-all"
           >
             <h3 className="text-2xl font-bold mb-4 text-amber-400">Tools</h3>
