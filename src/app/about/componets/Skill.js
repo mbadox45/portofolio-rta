@@ -163,7 +163,7 @@ export default function Skill() {
       </div>
 
       {/* Mobile View */}
-      <div className="md:hidden absolute text-white top-0 w-full px-7 font-michroma min-h-screen flex flex-col gap-6 mt-18">
+      <div className="md:hidden absolute text-white top-0 w-full px-7 font-michroma min-h-screen flex flex-col gap-6 justify-center">
         {/* Title */}
         <motion.span
           initial={{ x: -300, opacity: 0 }}
