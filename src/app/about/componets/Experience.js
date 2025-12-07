@@ -68,7 +68,7 @@ export default function Experience() {
             <FloatingIcons />
 
             {/* Description */}
-            <div className="absolute top-0 w-full pl-40 pr-40 font-michroma min-h-screen flex flex-col gap-10 justify-center">
+            <div className="absolute top-0 w-full px-7 md:px-40 font-michroma min-h-screen flex flex-col gap-5 justify-center">
                 {/* Title Animation */}
                 <motion.span
                 initial={{ x: -300, opacity: 0 }}
@@ -79,7 +79,7 @@ export default function Experience() {
                     damping: 8,
                     delay: 0.5,
                 }}
-                className="text-6xl uppercase font-bold font-suse inline-block"
+                className="text-4xl md:text-6xl uppercase font-bold font-suse inline-block"
                 style={{
                     textShadow: `
                     2px 2px 0 #1e3a8a,   
@@ -105,7 +105,7 @@ export default function Experience() {
                         boxShadow: "0px 12px 30px rgba(0,0,0,0.5)",
                         transition: { type: "spring", stiffness: 500, damping: 12 },
                     }}
-                    className="p-6 rounded-lg bg-black/80 border-2 border-amber-500 
+                    className="p-3 md:p-6 rounded-lg bg-black/80 col-span-2 md:col-span-1 border-2 border-amber-500 
                                 text-stone-200 font-medium leading-relaxed shadow-xl flex flex-col gap-3 cursor-pointer"
                     >
                         <div className="flex items-center gap-3">
@@ -114,11 +114,18 @@ export default function Experience() {
                             alt={exp.company}
                             width={70}
                             height={70}
-                            className="rounded-md object-contain bg-white p-2"
+                            className="hidden md:block rounded-md object-contain bg-white p-2"
+                            />
+                            <Image
+                            src={exp.logo}
+                            alt={exp.company}
+                            width={40}
+                            height={40}
+                            className="md:hidden block rounded-md object-contain bg-white/40 p-1"
                             />
                             <div>
-                                <h3 className="text-lg font-bold">{exp.role}</h3>
-                                <p className="text-sm">{exp.company}</p>
+                                <h3 className="text-md md:text-lg font-bold">{exp.role}</h3>
+                                <p className="text-[10px] md:text-sm">{exp.company}</p>
                             </div>
                         </div>
                         <span className="text-xs text-stone-400">{exp.date}</span>
