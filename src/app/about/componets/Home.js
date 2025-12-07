@@ -126,7 +126,7 @@ export default function Home() {
 
             {/* Mobile View */}
 
-            <div className="md:hidden absolute top-0 w-full flex flex-col gap-6 items-center justify-center px-5 min-h-screen">
+            <div className="md:hidden absolute top-0 w-full flex flex-col gap-8 items-center justify-center px-5 min-h-screen">
                 <span
                 className="text-3xl md:text-4xl uppercase font-bold font-michroma"
                 style={{

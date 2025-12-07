@@ -2,7 +2,7 @@
 
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { useEffect } from "react";
-import { Bug, Code, Sparkles, CodeXml, ArrowRight } from "lucide-react";
+import { Bug, Code, Sparkles, CodeXml, Download } from "lucide-react";
 import Link from "next/link";
 
 export default function ParallaxHero() {
@@ -140,13 +140,13 @@ export default function ParallaxHero() {
                 type="button"
                 className=""
                 >
-                    <a href={`${process.env.NEXT_PUBLIC_URL_HOME}/about` || '/about'} className="group relative overflow-hidden flex items-center gap-2 mt-7 px-5 py-3 
+                    <a href={`https://docs.google.com/document/d/1sSHPvgbeBUyi6qkFr02XSypsjv8IZDj2SPfEImcxiFU/edit?usp=sharing`} target="_blank" className="group relative overflow-hidden flex items-center gap-2 mt-7 px-5 py-3 
                             border-2 cursor-pointer border-white font-bold uppercase text-white">
                         <span className="absolute inset-0 bg-pink-800 border-2 border-pink-800 translate-x-[-100%] transition-transform duration-500 group-hover:translate-x-0"></span>
                         <span className="relative z-10 group-hover:text-white transition-colors duration-500">
-                            About Me
+                            My Resume
                         </span>
-                        <ArrowRight size={25} className="relative group-hover:text-white" />
+                        <Download size={25} className="relative group-hover:text-white" />
                     </a>
                 </motion.button>
             </motion.div>
