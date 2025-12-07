@@ -99,9 +99,9 @@ export default function ParallaxHero() {
             {/* Logo */}
             <motion.div variants={item2}
                 initial="hidden"
-                animate="show" className="absolute w-1/2 h-screen flex items-center justify-center" style={{ x: logoX, y: logoY }}>
+                animate="show" className="absolute w-full md:w-1/2 h-screen flex items-center justify-center" style={{ x: logoX, y: logoY }}>
                 <div
-                className="w-[25rem] h-[25rem] opacity-60"
+                className="w-[25rem] h-[25rem] opacity-10 md:opacity-60 bg-center bg-no-repeat bg-contain"
                 style={{
                     WebkitMaskImage: "url('/logo/Logo Mbadox.png')",
                     WebkitMaskRepeat: "no-repeat",
@@ -114,24 +114,24 @@ export default function ParallaxHero() {
 
             {/* === KONTEN HERO DENGAN STAGGER === */}
             <motion.div
-                className="absolute flex flex-col items-end justify-center uppercase h-screen px-40 w-full z-20"
+                className="absolute flex flex-col items-center md:items-end justify-center uppercase h-screen px-5 md:px-40 w-full z-20"
                 variants={container}
                 initial="hidden"
                 animate="show"
             >
                 <motion.div variants={item} className="text-stone-800 p-2 bg-white flex items-center gap-3">
                     <CodeXml size={20} className="font-bold " />
-                    <span className="font-bold font-exo-2">Software Engineer</span>
+                    <span className="font-bold font-exo-2 text-xs md:text-lg">Software Engineer</span>
                 </motion.div>
 
-                <motion.div variants={item} className="flex flex-col items-end">
-                    <span className="text-white w-full text-right text-[60px] mb-[-20px] font-bold font-michroma italic">
+                <motion.div variants={item} className="flex flex-col items-center md:items-end">
+                    <span className="text-white w-full text-right text-[40px] md:text-[60px] mb-[-10px] md:mb-[-20px] font-bold font-michroma italic">
                         Rio Teguh
                     </span>
-                    <span className="text-white w-full text-right text-[62px] font-semibold font-michroma italic">
+                    <span className="text-white w-full text-right text-[42px] md:text-[62px] font-semibold font-michroma italic">
                         Ardiarta
                     </span>
-                    <span className="w-2/3 border-b-4 border-amber-500 text-right font-bold">My Portofolio</span>
+                    <span className="w-2/3 border-b-4 border-amber-500 text-center md:text-right font-bold">My Portofolio</span>
                     <span className="w-1/3 border-b-4 mt-2 border-amber-500"></span>
                 </motion.div>
 
@@ -154,7 +154,7 @@ export default function ParallaxHero() {
             {/* Footer */}
             <motion.div
                 variants={item}
-                className="absolute bottom-0 left-40 py-10 font-exo-2 font-medium text-xs flex gap-1 items-center justify-end"
+                className="absolute bottom-0 md:w-auto w-full md:left-40 py-10 font-exo-2 font-medium text-xs flex gap-1 items-center md:justify-end justify-center px-5"
             >
                 <span className="font-bold">rtardiarta</span>
                 <span className="font-bold">&copy;</span>

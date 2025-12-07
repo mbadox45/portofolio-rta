@@ -79,7 +79,7 @@ export default function AboutMe() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, duration: 0.6 }}
-        className="absolute bottom-0 left-40 py-10 font-exo-2 text-white font-medium text-xs flex gap-1 items-center justify-end"
+        className="absolute bottom-0 md:w-auto w-full md:left-40 py-6 font-exo-2 font-medium text-xs flex gap-1 items-center md:justify-end justify-center px-5"
       >
         <span className="font-bold">rtardiarta</span>
         <span className="font-bold">&copy;</span>

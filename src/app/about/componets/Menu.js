@@ -9,7 +9,7 @@ export default function Menu({ selected, onSelect }) {
   ];
 
   return (
-    <section className="fixed flex flex-col items-center gap-8 h-screen right-8 bottom-0 w-[80px] justify-center z-20">
+    <section className="fixed flex flex-col md:items-center gap-8 h-screen right-4 md:right-8 bottom-0 md:w-[80px] justify-center z-20">
       <div className="flex flex-col items-center gap-8">
         {menuItems.map((item) => (
           <motion.div
