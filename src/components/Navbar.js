@@ -49,6 +49,7 @@ export default function Navbar() {
               href="https://www.instagram.com/rtardiarta/profilecard/?igsh=bWM0a3dvOWZxbXgx"
               target="_blank"
               rel="noreferrer"
+              className="text-white"
             >
               <Instagram size={24} />
             </motion.a>
@@ -57,6 +58,7 @@ export default function Navbar() {
               href="https://www.linkedin.com/in/rio-teguh-ardiarta-52a021116/"
               target="_blank"
               rel="noreferrer"
+              className="text-white"
             >
               <Linkedin size={24} />
             </motion.a>
@@ -65,6 +67,7 @@ export default function Navbar() {
               href="https://github.com/mbadox45/"
               target="_blank"
               rel="noreferrer"
+              className="text-white"
             >
               <Github size={24} />
             </motion.a>
@@ -114,6 +117,7 @@ export default function Navbar() {
                 href="https://www.instagram.com/rtardiarta/profilecard/?igsh=bWM0a3dvOWZxbXgx"
                 target="_blank"
                 rel="noreferrer"
+                className="text-white"
               >
                 <Instagram size={24} />
               </motion.a>
@@ -122,6 +126,7 @@ export default function Navbar() {
                 href="https://www.linkedin.com/in/rio-teguh-ardiarta-52a021116/"
                 target="_blank"
                 rel="noreferrer"
+                className="text-white"
               >
                 <Linkedin size={24} />
               </motion.a>
@@ -130,6 +135,7 @@ export default function Navbar() {
                 href="https://github.com/mbadox45/"
                 target="_blank"
                 rel="noreferrer"
+                className="text-white"
               >
                 <Github size={24} />
               </motion.a>

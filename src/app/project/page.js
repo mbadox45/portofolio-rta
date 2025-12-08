@@ -91,7 +91,7 @@ export default function Project() {
                     damping: 8,
                     delay: 0.4,
                     }}
-                    className="text-4xl md:text-6xl uppercase font-bold font-suse inline-block"
+                    className="text-4xl md:text-6xl uppercase font-bold font-suse inline-block text-white"
                     style={{
                     textShadow: `
                         2px 2px 0 #1e3a8a,
