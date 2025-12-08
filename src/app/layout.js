@@ -15,6 +15,9 @@ const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-montserrat
 export const metadata = {
   title: "rtardiarta - Portfolio",
   description: "Personal Portfolio Website | rtardiarta",
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({ children }) {
